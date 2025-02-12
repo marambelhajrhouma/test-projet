@@ -1,0 +1,60 @@
+<div class="container"> 
+    <div class="card shadow mb-4"> 
+      <div class="card-body"> 
+        <table class="table"> 
+          <thead> 
+            <tr> 
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Description</th>
+              <th>Prix</th>
+              <th>materiau</th>
+              <th>couleur</th>
+              <th>dimensions</th>
+              <th>disponibilité</th>
+              <th>stock</th>
+              <th>Categorie</th>
+              <th>Image</th>
+
+              <!--j'ai commenter cette partie du code Maram -->
+              <!--
+              <th *ngIf="authService.isAdmin()">Action</th>
+            -->
+
+            </tr> 
+          </thead> 
+          <tbody>
+            <tr *ngFor="let bassin of bassins"> 
+              <td>{{ bassin.idBassin }}</td> 
+              <td>{{ bassin.nomBassin }}</td> 
+              <td>{{ bassin.description }}</td>
+              <td>{{ bassin.prix }}</td> 
+              <td>{{ bassin.materiau }}</td> 
+              <td>{{ bassin.couleur }}</td> 
+              <td>{{ bassin.dimensions }}</td> 
+              <td>{{ bassin.disponible }}</td> 
+              <td>{{ bassin.stock }}</td> 
+           <!--  <td>{{ bassin.categorie?.nomCategorie }}</td>-->
+              
+              <!--/******Les lignes de codes pour stocker une images dans le file imagesEvenements*******/-->
+                <!--src="{{apiurl+'/image/loadfromFS/'+evenement.idEvenement}}" -->
+             
+                
+                <td><img class="card-img-top img-responsive" 
+                  src="{{bassin.imageStr}}"
+                  style = "height :50px;width:100px"> 
+              </td>
+
+              <!--j'ai commenter cette partie du code Maram -->
+              <!--
+              <td><a class="btn btn-danger" (click)="supprimerEvenement(evenement)" *ngIf="authService.isAdmin()">Supprimer</a></td>
+              <td><a class="btn btn-success" [routerLink]="['/updateEvenement',evenement.idEvenement]" *ngIf="authService.isAdmin()">Modifier</a></td>
+            -->
+              
+            </tr> 
+          </tbody> 
+        </table> 
+      </div> 
+    </div> 
+  </div>
+  
